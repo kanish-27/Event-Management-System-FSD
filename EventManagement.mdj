@@ -1,0 +1,222 @@
+{
+  "_type": "Project",
+  "_id": "Project1",
+  "name": "EventManagementSystem",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "Model1",
+      "_parent": { "$ref": "Project1" },
+      "name": "DesignModel",
+      "ownedElements": [
+        {
+          "_type": "UMLClassDiagram",
+          "_id": "Diagram1",
+          "_parent": { "$ref": "Model1" },
+          "name": "MainDiagram",
+          "defaultDiagram": true
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "Class_User",
+          "_parent": { "$ref": "Model1" },
+          "name": "User",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_User_Id",
+              "_parent": { "$ref": "Class_User" },
+              "name": "id",
+              "type": "String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_User_Username",
+              "_parent": { "$ref": "Class_User" },
+              "name": "username",
+              "type": "String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_User_Email",
+              "_parent": { "$ref": "Class_User" },
+              "name": "email",
+              "type": "String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_User_Role",
+              "_parent": { "$ref": "Class_User" },
+              "name": "role",
+              "type": "String",
+              "documentation": "admin, organizer, user"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "Class_Event",
+          "_parent": { "$ref": "Model1" },
+          "name": "Event",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Event_Id",
+              "_parent": { "$ref": "Class_Event" },
+              "name": "id",
+              "type": "String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Event_Title",
+              "_parent": { "$ref": "Class_Event" },
+              "name": "title",
+              "type": "String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Event_Date",
+              "_parent": { "$ref": "Class_Event" },
+              "name": "date",
+              "type": "Date"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Event_Location",
+              "_parent": { "$ref": "Class_Event" },
+              "name": "location",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "Class_Category",
+          "_parent": { "$ref": "Model1" },
+          "name": "Category",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Category_Id",
+              "_parent": { "$ref": "Class_Category" },
+              "name": "id",
+              "type": "String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Category_Name",
+              "_parent": { "$ref": "Class_Category" },
+              "name": "name",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "Class_Booking",
+          "_parent": { "$ref": "Model1" },
+          "name": "Booking",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Booking_Id",
+              "_parent": { "$ref": "Class_Booking" },
+              "name": "id",
+              "type": "String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Booking_Date",
+              "_parent": { "$ref": "Class_Booking" },
+              "name": "bookingDate",
+              "type": "Date"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "Attr_Booking_Status",
+              "_parent": { "$ref": "Class_Booking" },
+              "name": "status",
+              "type": "String"
+            }
+          ]
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "Assoc_User_Event",
+          "_parent": { "$ref": "Model1" },
+          "end1": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_User_Event_1",
+            "_parent": { "$ref": "Assoc_User_Event" },
+            "reference": { "$ref": "Class_User" },
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_User_Event_2",
+            "_parent": { "$ref": "Assoc_User_Event" },
+            "reference": { "$ref": "Class_Event" },
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "Assoc_User_Booking",
+          "_parent": { "$ref": "Model1" },
+          "end1": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_User_Booking_1",
+            "_parent": { "$ref": "Assoc_User_Booking" },
+            "reference": { "$ref": "Class_User" },
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_User_Booking_2",
+            "_parent": { "$ref": "Assoc_User_Booking" },
+            "reference": { "$ref": "Class_Booking" },
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "Assoc_Event_Booking",
+          "_parent": { "$ref": "Model1" },
+          "end1": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_Event_Booking_1",
+            "_parent": { "$ref": "Assoc_Event_Booking" },
+            "reference": { "$ref": "Class_Event" },
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_Event_Booking_2",
+            "_parent": { "$ref": "Assoc_Event_Booking" },
+            "reference": { "$ref": "Class_Booking" },
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "Assoc_Category_Event",
+          "_parent": { "$ref": "Model1" },
+          "end1": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_Category_Event_1",
+            "_parent": { "$ref": "Assoc_Category_Event" },
+            "reference": { "$ref": "Class_Category" },
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_type": "UMLAssociationEnd",
+            "_id": "End_Category_Event_2",
+            "_parent": { "$ref": "Assoc_Category_Event" },
+            "reference": { "$ref": "Class_Event" },
+            "multiplicity": "0..*"
+          }
+        }
+      ]
+    }
+  ]
+}

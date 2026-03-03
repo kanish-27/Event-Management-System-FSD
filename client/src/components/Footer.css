@@ -1,0 +1,30 @@
+.footer {
+    padding: 2rem 0;
+    background: var(--dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray);
+    margin-top: 5rem;
+}
+
+.footer-content {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-brand h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.footer-brand p {
+    font-size: 0.875rem;
+}
+
+.social-link {
+    color: var(--gray);
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary);
+}
